@@ -64,8 +64,8 @@ function increase1(){
    
   World.add(world,part2);
    snake.body.push(part2);
-  // snake.connect();
-   //snake.display1();
+   snake.connect();
+   snake.display1();
 }
 }
 

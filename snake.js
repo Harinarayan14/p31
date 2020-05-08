@@ -44,27 +44,31 @@ class Snake{
         pop();
     }
 }
-/*connect (){
-  var options ={
-  bodyA: this.bodyA,
- bodyB: this.bodyB,
- stiffness:1,
- length:1
-};
+connect (){
+  var body1,body2,chain;
+  if(this.body.length >= 2){
 for(let i = 0; i < this.body.length; i++) {
-  this.bodyA = this.body[i];
-  this.bodyB = this.body[i];
-  this.chain=  Matter.Constraint.create(options);
+  
+ body1= this.body[i];
+   body2 = this.body[i+1];if(body2!==null){
+    var options1 ={
+      bodyA: body1,
+     bodyB: body2,
+     stiffness:1,
+     length:1
+    };
   }
-
+  chain=  Matter.Constraint.create(options1);
+   World.add(world,chain);
+   
+  if(body2!==null){
+    var pointA = body1.position;
+    var pointB = body2.position;
+    strokeWeight(4);
+    line(pointA.x, pointA.y, pointB.x,pointB.y);
+    }
+  }
+  }
 }
-display1(){
-if(this.bodyA!=null){
-var pointA = this.bodyA.position;
-var pointB = this.bodyB.position;
-strokeWeight(4);
-line(pointA.x, pointA.y, pointB.x,pointB.y);
-}
-}*/
 }
 
